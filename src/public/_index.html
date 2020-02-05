@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"></link>
+
+    <title>Dashboard - SIMUNIPDF</title>
+</head>
+<body>
+    <!-- GRÁFICO :: MORTALIDADE POR GÊNERO -->
+
+    <h1 style="font-family: Helvetica, Segoi UI; color: #777777;">Sistema de Informações de Nascidos Vivos (17.178 amostras)</h1>
+    <div>
+        <div class = "container" style="position: absolute; float: left; width: 400px;">
+        <canvas id = "myChart1"></canvas>
+        </div>
+
+        <script>
+            let myChart1 = document.getElementById('myChart1').getContext('2d');
+
+            let massPopChart1  = new Chart(myChart1, {
+                type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    //labels: ['Masculino', 'Feminino', 'Não Especificado'],
+                    datasets:[{
+                        label:'Masculino',
+                        data:[8616],
+                        backgroundColor:[
+                            'green'
+                        ],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label:'Feminino',
+                        data:[8553],
+                        backgroundColor:[
+                            'blue'
+                        ],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label:'Não Especificado',
+                        data:[0],
+                        backgroundColor:[
+                            'pink'
+                        ],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    ]
+                }, 
+                options:{
+                    title:{
+                        display: true,
+                        text: 'Gênero da Criança',
+                        fontSize: 20
+                    },
+                    legend:{
+                        position: 'right'
+                    },
+                    layout:{
+                        width: 10,
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                }
+            });
+        </script>
+    </div>
+
+    <!-- GRÁFICO :: MORTALIDADE POR RAÇA/COR -->
+    <div>
+        <div class = "container" style="position: absolute; float: right; width: 400px; left: 450px;">
+        <canvas id = "myChart2"></canvas>
+        </div>
+
+        <script>
+            let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+            let massPopChart2  = new Chart(myChart2, {
+                type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: ['Branca', 'Preta', 'Amarela', 'Parda', 'Indígena'],
+                    datasets:[{
+                        //label: 'Branca',
+                        data:[9052, 266, 13, 6829, 4],
+                        backgroundColor:['green', 'blue', 'yellow', 'pink', 'gray'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    }
+                ]
+                }, 
+                options:{
+                    title:{
+                        display: true,
+                        text: 'Raça/Cor da Criança',
+                        fontSize: 20
+                    },
+                    legend:{
+                        position: 'right'
+                    },
+                    layout:{
+                        width: 10,
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                }
+            });
+        </script>
+    </div>
+    <!-- MORTALIDADE POR DIAS DA SEMANA -->
+    <div>
+        <div class = "container" style="position: absolute; float: left; width: 400px; left: 900px;">
+        <canvas id = "myChart3"></canvas>
+        </div>
+
+        <script>
+            let myChart3 = document.getElementById('myChart3').getContext('2d');
+
+            let massPopChart3  = new Chart(myChart3, {
+                type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                    datasets:[{
+                        label: 'Dias da Semana',
+                        data:[1095, 2864, 2033, 5548, 2242, 2204, 1184],
+                        backgroundColor:[
+                            'orange'
+                        ],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    }]
+                }, 
+                options:{
+                    title:{
+                        display: true,
+                        text: 'Nascimentos por Dia da Semana',
+                        fontSize: 20
+                    },
+                    legend:{
+                        position: 'right'
+                    },
+                    layout:{
+                        width: 10,
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                }
+            });
+        </script>
+    </div>
+
+    <!-- MORTALIDADE POR LOCAL DE OCORRÊNCIAS -->
+    <div>
+        <div class = "container" style="position: absolute; float: left; width: 450px; top: 300px;">
+            <canvas id = "myChart4"></canvas>
+        </div>
+
+        <script>
+            let myChart4 = document.getElementById('myChart4').getContext('2d');
+
+            let massPopChart4  = new Chart(myChart4, {
+                type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    //labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                    datasets:[{
+                        label: 'Hospital',
+                        data:[17156],
+                        backgroundColor:['orange'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Outro Est. de Saúde',
+                        data:[10],
+                        backgroundColor:['gray'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },{
+                        label: 'Domicílio',
+                        data:[1],
+                        backgroundColor:['green'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Outros',
+                        data:[3],
+                        backgroundColor:['pink'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Ignorado',
+                        data:[0],
+                        backgroundColor:['violet'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    }
+                ]
+                }, 
+                options:{
+                    title:{
+                        display: true,
+                        text: 'Locais de Nascimento',
+                        fontSize: 20
+                    },
+                    legend:{
+                        position: 'right'
+                    },
+                    layout:{
+                        width: 10,
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                }
+            });
+        </script>    
+    </div>
+
+    <div>
+        <div class = "container" style="position: absolute; float: left; width: 450px; top: 300px; left: 450px;">
+            <canvas id = "myChart5"></canvas>
+        </div>
+
+        <script>
+            let myChart5 = document.getElementById('myChart5').getContext('2d');
+
+            let massPopChart5  = new Chart(myChart5, {
+                type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    //labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                    datasets:[{
+                        label: 'Solteira',
+                        data:[5983],
+                        backgroundColor:['orange'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Casada',
+                        data:[6081],
+                        backgroundColor:['gray'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },{
+                        label: 'Viúva',
+                        data:[48],
+                        backgroundColor:['green'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Separada',
+                        data:[67],
+                        backgroundColor:['pink'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'União Concensual',
+                        data:[4811],
+                        backgroundColor:['violet'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    },
+                    {
+                        label: 'Ignorado',
+                        data:[180],
+                        backgroundColor:['red'],
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'gray'
+                    }
+                ]
+                }, 
+                options:{
+                    title:{
+                        display: true,
+                        text: 'Estado Civil da Mãe',
+                        fontSize: 20
+                    },
+                    legend:{
+                        position: 'right'
+                    },
+                    layout:{
+                        width: 10,
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                }
+            });
+        </script>    
+    </div>
+
+    <div>
+            <div class = "container" style="position: absolute; float: right; width: 400px; left: 900px; top: 300px;">
+            <canvas id = "myChart6"></canvas>
+            </div>
+    
+            <script>
+                let myChart6 = document.getElementById('myChart6').getContext('2d');
+    
+                let massPopChart6  = new Chart(myChart6, {
+                    type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                    data: {
+                        labels: ['Vaginal', 'Cesário', 'Ignorado'],
+                        datasets:[{
+                            //label: 'Branca',
+                            data:[3576, 13534, 60],
+                            backgroundColor:['green', 'blue', 'yellow', 'pink', 'gray'],
+                            hoverBorderWidth: 2,
+                            hoverBorderColor: 'gray'
+                        }
+                    ]
+                    }, 
+                    options:{
+                        title:{
+                            display: true,
+                            text: 'Tipo de Parto',
+                            fontSize: 20
+                        },
+                        legend:{
+                            position: 'right'
+                        },
+                        layout:{
+                            width: 10,
+                            left: 50,
+                            right: 0,
+                            bottom: 0,
+                            top: 0
+                        }
+                    }
+                });
+            </script>
+        </div>
+
+</body>
+</html>
