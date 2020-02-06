@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
 const GeralSchema = new mongoose.Schema({
     APGAR5: String,
@@ -121,4 +121,4 @@ const GeralSchema = new mongoose.Schema({
     res_coordenadas: String
 })
 
-module.exports = mongoose.model('GERAL', GeralSchema)
+module.exports = mongoose.model('geral', GeralSchema)
