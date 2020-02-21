@@ -7,11 +7,11 @@ const express = require('./server')
 
 const mongoose = require('mongoose');
 
-// const app = express();
-// app.use(cors())
-const charts = require('../routes/chart');
+  // const app = express();
+//  app.use(cors())
+// const charts = require('../routes/chart');
 
-var url = "mongodb://localhost:27017/test";
+var url = "mongodb://localhost:27017/tesci";
 
 mongoose.connect(url, {
   useUnifiedTopology: true,
@@ -97,7 +97,7 @@ mongo.connect(url, function(err, db) {
 
 //SINASC
 
-// app.use(express.static(path.join(__dirname, 'public')));
+//  app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
@@ -108,3 +108,4 @@ mongo.connect(url, function(err, db) {
 const port = 3000;
 
 express.listen(port, () => console.log(`Servidor iniciado na porta ${port}`));
+// app.use(express.static('/views/css'))

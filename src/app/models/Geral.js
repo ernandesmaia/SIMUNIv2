@@ -121,4 +121,4 @@ const GeralSchema = new mongoose.Schema({
     res_coordenadas: String
 })
 
-module.exports = mongoose.model('geral', GeralSchema)
+module.exports = mongoose.model('sinascs', GeralSchema)
